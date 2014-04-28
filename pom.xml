@@ -55,6 +55,7 @@
 		<dependency>
 			<groupId>com.proserus.stock</groupId>
 			<artifactId>stockportfolioui</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
