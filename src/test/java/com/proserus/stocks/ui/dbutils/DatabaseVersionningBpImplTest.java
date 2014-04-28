@@ -108,9 +108,7 @@ public class DatabaseVersionningBpImplTest {
 		inject.getInstance(ViewControllers.class);
 
 		DatabasePaths databases = new DatabasePaths();
-		new File("src/test/resources/tmpdb.script").delete();
-		new File("src/test/resources/tmpdb.properties").delete();
-		new File("src/test/resources/tmpdb.log").delete();
+		removeTmpFiles();
 
 		FileUtils.copyFile(new File("src/test/resources/StockPortfolio_"
 				+ version + "/data/db.script"), new File(
@@ -123,6 +121,15 @@ public class DatabaseVersionningBpImplTest {
 
 		assertEquals(7, compareDb("src/test/resources/tmpdb.script"));
 		System.out.println("version " + version + " tested");
+		removeTmpFiles();
+	}
+
+	private void removeTmpFiles() {
+		new File("src/test/resources/tmpdb.script").delete();
+		new File("src/test/resources/tmpdb.properties").delete();
+		new File("src/test/resources/tmpdb.log").delete();
+		new File("src/test/resources/config.properties").delete();
+		new File("src/test/resources/version.properties").delete();
 	}
 
 	private int compareDb(String path) throws IOException {
