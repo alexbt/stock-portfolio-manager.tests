@@ -4,10 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-import junit.framework.Assert;
+import static org.junit.Assert.*;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import com.google.inject.Guice;
@@ -106,7 +105,7 @@ public class DatabaseVersionningBpImplTest {
 
 	private void testUpgrade(String version) throws IOException {
 		Injector inject = Guice.createInjector(new SwingModule());
-		ViewControllers v = inject.getInstance(ViewControllers.class);
+		inject.getInstance(ViewControllers.class);
 
 		DatabasePaths databases = new DatabasePaths();
 		new File("src/test/resources/tmpdb.script").delete();
@@ -119,10 +118,10 @@ public class DatabaseVersionningBpImplTest {
 		databases.setSelectedDatabase("src/test/resources/tmpdb");
 		SwingEvents.DATABASE_SELECTED.fire(databases);
 
-		v.getController().checkDatabaseVersion();
+		ViewControllers.getController().checkDatabaseVersion();
 		inject.getInstance(PersistenceManager.class).close();
 
-		Assert.assertEquals(7, compareDb("src/test/resources/tmpdb.script"));
+		assertEquals(7, compareDb("src/test/resources/tmpdb.script"));
 		System.out.println("version " + version + " tested");
 	}
 
@@ -141,9 +140,9 @@ public class DatabaseVersionningBpImplTest {
 		for (String line : oldVersions) {
 			if (line.startsWith("CREATE MEMORY TABLE")) {
 				if(!line.equals(goods[i]) && line.equals(goods[i].replace(rogue_constraint, ""))){
-					Assert.assertEquals(goods[i++].replace(rogue_constraint, ""), line);  
+					assertEquals(goods[i++].replace(rogue_constraint, ""), line);  
 				}else{
-					Assert.assertEquals(goods[i++], line);
+					assertEquals(goods[i++], line);
 				}
 			}
 		}
