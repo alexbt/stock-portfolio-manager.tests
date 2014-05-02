@@ -14,6 +14,7 @@ import com.google.inject.Injector;
 import com.proserus.stocks.bo.common.DatabasePaths;
 import com.proserus.stocks.bp.dao.PersistenceManager;
 import com.proserus.stocks.bp.events.SwingEvents;
+import com.proserus.stocks.bp.services.DatabaseVersionningBp;
 import com.proserus.stocks.ui.SwingModule;
 import com.proserus.stocks.ui.controller.ViewControllers;
 
@@ -116,6 +117,7 @@ public class DatabaseVersionningBpImplTest {
 		databases.setSelectedDatabase("src/test/resources/tmpdb");
 		SwingEvents.DATABASE_SELECTED.fire(databases);
 
+		inject.getInstance(DatabaseVersionningBp.class).setIgnorePopop(true);
 		ViewControllers.getController().checkDatabaseVersion();
 		inject.getInstance(PersistenceManager.class).close();
 
