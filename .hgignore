@@ -1,0 +1,35 @@
+
+syntax: regexp
+\.jar$
+syntax: regexp
+\zip$
+syntax: glob
+key.bat
+syntax: glob
+keystore.conf
+syntax: regexp
+\.class$
+syntax: regexp
+\.cert$
+syntax: glob
+shrink.bat
+syntax: glob
+sign.bat
+syntax: glob
+lib/build.xml
+syntax: glob
+Thumbs.db
+syntax: glob
+y*log.xml
+syntax: glob
+lib/log4j.xml
+syntax: regexp
+\.lck$
+syntax: glob
+StockPortfolio_*\config.properties
+syntax: glob
+StockPortfolio_*\launch.bat
+syntax: glob
+logs/*.log.*
+syntax: regexp
+^target$
