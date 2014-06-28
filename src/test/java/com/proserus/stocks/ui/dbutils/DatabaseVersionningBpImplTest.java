@@ -40,7 +40,7 @@ public class DatabaseVersionningBpImplTest {
 																// entry..
 		assertTrue(dbBeingUpdated.contains("INSERT INTO VERSION VALUES(1,24)"));
 		assertTrue(dbBeingUpdated.contains("INSERT INTO VERSION VALUES(1,24)"));
-		assertTrue(dbBeingUpdated.contains("INSERT INTO SYMBOL VALUES(-1,'0','','Error','UNKNOWN','ERROR')"));
+		assertTrue(dbBeingUpdated.contains("INSERT INTO SYMBOL VALUES(-1,'0','','Error','UNKNOWN','ERR')"));
 		assertTrue(dbBeingUpdated.contains("YEAR INTEGER NOT NULL"));
 
 		boolean specialCaseForForeingKeyTransactionSymbol = dbBeingUpdated.contains(FK_TRANSACTION_SYMBOL_ALTER);
