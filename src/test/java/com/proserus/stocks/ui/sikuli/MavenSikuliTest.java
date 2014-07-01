@@ -59,8 +59,8 @@ public class MavenSikuliTest implements EventListener {
 		Field emField = pm.getClass().getDeclaredField("em");
 		Field dbPathField = pm.getClass().getDeclaredField("dbPath");
 		dbPath = new DatabasePaths();
-		dbPath.setBinaryCurrentFolder(currentDir);
-		dbPath.setOsCurrentFolder(currentDir);
+		dbPath.setInstallationFolder(currentDir);
+		dbPath.setCurrentFolder(currentDir);
 		Database db = new Database(currentDir + "/data/db");
 		dbPath.addDb(db);
 		dbPath.setSelectedDatabase(db);
