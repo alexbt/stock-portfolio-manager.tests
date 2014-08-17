@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.sikuli.api.DesktopScreenRegion;
 import org.sikuli.api.ImageTarget;
 import org.sikuli.api.ScreenRegion;
+import org.sikuli.api.robot.Key;
 import org.sikuli.api.robot.Keyboard;
 import org.sikuli.api.robot.Mouse;
 import org.sikuli.api.robot.desktop.DesktopKeyboard;
@@ -97,7 +98,14 @@ public class MavenSikuliTest implements EventListener {
 			click(SikuliAction.TRANSACTIONTAB_DELETE);
 
 			while (isFound(SikuliImage.TRANSACTIONTAB_CONFIRMDELETE)) {
-				click(SikuliAction.TRANSACTIONTAB_CONFIRMDELETE_OK);
+				keyboard.keyDown(Key.ALT);
+				keyboard.type("o");
+				keyboard.keyUp(Key.ALT);
+				keyboard.keyDown(Key.ALT);
+				keyboard.type("y");
+				keyboard.keyUp(Key.ALT);
+				// click(SikuliAction.TRANSACTIONTAB_CONFIRMDELETE_OK);
+
 				// transaction table
 				click(SikuliAction.TRANSACTIONTAB_FIRSTROW_NONE_SELECTED);
 				click(SikuliAction.TRANSACTIONTAB_DELETE);
@@ -110,7 +118,13 @@ public class MavenSikuliTest implements EventListener {
 		if (isFound(SikuliImage.SYMBOLTAB_DELETE_ENABLED)) {
 			click(SikuliAction.SYMBOLTAB_DELETE);
 			while (isFound(SikuliImage.SYMBOLTAB_CONFIRM_DELETE)) {
-				click(SikuliAction.SYMBOLTAB_CONFIRMDELETE_OK);
+				keyboard.keyDown(Key.ALT);
+				keyboard.type("o");
+				keyboard.keyUp(Key.ALT);
+				keyboard.keyDown(Key.ALT);
+				keyboard.type("y");
+				keyboard.keyUp(Key.ALT);
+				// click(SikuliAction.SYMBOLTAB_CONFIRMDELETE_OK);
 				click(SikuliAction.SYMBOLTAB_FIRSTROW_NONE_SELECTED);
 				click(SikuliAction.SYMBOLTAB_DELETE);
 			}
