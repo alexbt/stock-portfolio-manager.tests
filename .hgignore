@@ -33,3 +33,5 @@ syntax: glob
 logs/*.log.*
 syntax: regexp
 ^target$
+syntax: regexp
+^build$
