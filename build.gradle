@@ -1,0 +1,26 @@
+	
+    dependencies {
+       dependencies {
+       testCompile project(':stock-portfolio-manager.bo'), project(':stock-portfolio-manager.bp'), project(':stock-portfolio-manager.ui')
+       testCompile libraries.guice
+		testCompile libraries.apache
+		testCompile libraries.log4j
+		testCompile libraries.microba
+		testCompile libraries.jta
+		testCompile libraries.javassist
+		testCompile libraries.commonscollections
+		testCompile libraries.hsqldb
+		testCompile libraries.antlr
+		testCompile libraries.hibernate
+		testCompile libraries.antlr2
+		testCompile libraries.dom4j
+		testCompile libraries.inject
+		testCompile libraries.opencsv
+		testCompile libraries.aopalliance
+		testCompile libraries.joda
+		testCompile libraries.reflections
+		testCompile libraries.mockito
+		testCompile libraries.sikuli
+		testCompile "com.googlecode.javacv:javacv:0.1"
+		}
+    }	
